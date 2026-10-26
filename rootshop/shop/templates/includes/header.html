@@ -1,0 +1,12 @@
+{% load static %}
+<header>
+    <nav class="nav">
+        <a href="{% url 'main' %}" class="logo">Auto<span>Premium</span></a>
+        <ul class="nav-links">
+            <li><a href="{% url 'main' %}" {% if request.resolver_match.url_name == 'main' %}class="active"{% endif %}>Главная</a></li>
+            <li><a href="{% url 'catalog' %}" {% if request.resolver_match.url_name == 'catalog' %}class="active"{% endif %}>Каталог</a></li>
+            <li><a href="{% url 'about' %}" {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}>О нас</a></li>
+        </ul>
+        <a href="{% url 'catalog' %}" class="btn">Смотреть авто</a>
+    </nav>
+</header>
